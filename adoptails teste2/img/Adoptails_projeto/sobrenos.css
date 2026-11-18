@@ -1,0 +1,12 @@
+body {
+    align-items: center;
+    text-align: center;
+}
+
+ul {
+    list-style-type: none;
+}
+
+.secao {
+    background-color: #fff7d7;
+}

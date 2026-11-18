@@ -1,0 +1,81 @@
+.abas-container { display: flex; justify-content: center; gap: 15px; margin: 20px 0; }
+
+.aba-btn {
+padding: 10px 25px;
+border: 2px solid var(--teal);
+background: transparent;
+color: var(--teal);
+font-weight: bold;
+border-radius: 20px;
+ cursor: pointer;
+}
+
+.aba-btn.ativa {
+background: var(--teal);
+color: #fff;
+}
+
+.aba-conteudo { 
+display: none;
+}
+
+.aba-conteudo.ativa { 
+display: block; 
+}
+
+.form-doacao { 
+max-width: 500px; 
+margin: 30px auto; 
+padding: 20px; background: #fff; 
+border-radius: 14px;
+ box-shadow: 0 4px 14px rgba(0,0,0,0.1);
+  text-align: left; 
+}
+
+.form-grupo { 
+margin-bottom: 15px;
+display: flex;
+flex-direction: column; 
+}
+
+.form-grupo label { 
+font-weight: 600; 
+margin-bottom: 5px; 
+}
+
+.form-grupo input, .form-grupo select { 
+padding: 10px;
+border: 1px solid #ccc; 
+border-radius: 8px; 
+font-size: 1rem; 
+}
+
+.form-doacao button { 
+width: 100%; 
+padding: 12px; 
+background: var(--laranja); 
+border: none; color: white; 
+font-weight: bold; 
+font-size: 1rem; 
+border-radius: 8px; 
+cursor: pointer; 
+}
+
+    /* Prévia da foto */
+.previa-foto { 
+display: block;
+width: 140px; height: 140px;
+object-fit: cover; margin-top: 10px;
+border-radius: 12px; 
+border: 2px solid #ddd;
+}
+
+.previa-foto[hidden] { 
+display: none; 
+}
+
+.dica-foto { 
+font-size: 0.85rem;
+color: #666;
+margin-top: 6px; 
+}
