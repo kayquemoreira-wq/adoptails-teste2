@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Adoptails - Dê uma patinha</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="cabeca">
+    <a href="#" class="logo"> 
+        <img src="img/adoptail de lado.png" width="200px">
+    </a>
+
+    <nav>
+      <a href="#inicio" class="ativo">Início</a>
+      <a href="#como-ajudar">Sobre Nós</a>
+      <a href="#catalogo" onclick="mudarAba('catalogo')">Adotar</a>
+      <a href="#catalogo" onclick="mudarAba('doar')">Doar</a>
+      <a href="#como-ajudar">Voluntariado</a>
+      <a href="#contato">Contato</a>
+      <a href="#" class="btn-entrar" onclick="abrirModalLogin(event)">ENTRAR</a>
+    </nav>
+  </header>
+
+  <section id="inicio" class="hero">
+    <div class="hero-conteudo">
+      <h1>Adoptails</h1>
+      <p>dê uma patinha</p>
+      <div class="hero-botoes">
+        <a href="#catalogo" class="btn-hero-verde" onclick="mudarAba('catalogo')">CONHEÇA NOSSOS ANIMAIS</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="catalogo" class="secao-catalogo">
+    <h2 class="titulo-secao">Animais Esperando um Lar</h2>
+
+    <div class="abas-container">
+      <button id="btn-aba-catalogo" class="aba-btn ativa" onclick="mudarAba('catalogo')">Quero Adotar</button>
+      <button id="btn-aba-doar" class="aba-btn" onclick="mudarAba('doar')">+ Registrar Animal para Doação</button>
+    </div>
+
+    <div id="aba-catalogo" class="aba-conteudo ativa">
+      <div class="cards" id="lista-animais">
+        <p>Carregando animais...</p>
+      </div>
+    </div>
+
+    <div id="aba-doar" class="aba-conteudo">
+      <div class="form-doacao">
+        <h3>Oferecer Animal para Adoção</h3>
+        <form id="form-cadastrar-animal">
+          <div class="form-grupo">
+            <label for="nome">Nome do Pet</label>
+            <input type="text" id="nome" required placeholder="Ex: Bob, Mel">
+          </div>
+          <div class="form-grupo">
+            <label for="especie">Espécie</label>
+            <select id="especie" required>
+              <option value="Cachorro">Cachorro</option>
+              <option value="Gato">Gato</option>
+              <option value="Gata">Gata</option>
+              <option value="Outro">Outro</option>
+            </select>
+          </div>
+          <div class="form-grupo">
+            <label for="idade">Idade / Porte</label>
+            <input type="text" id="idade" required placeholder="Ex: 2 anos, 5 meses">
+          </div>
+          <div class="form-grupo">
+            <label for="arquivo-foto">Foto do Pet (opcional)</label>
+            <input type="file" id="arquivo-foto" accept="image/*">
+            <p class="dica-foto">Escolha uma imagem do seu aparelho (JPG, PNG). Se não escolher, exibiremos um ícone fofo automático!</p>
+            <img id="previa-foto" class="previa-foto" alt="Prévia da foto escolhida" hidden>
+            <input type="hidden" id="foto">
+          </div>
+          <button type="submit" class="btn-enviar">Cadastrar Animal</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <section id="como-ajudar" class="secao-ajudar">
+    <h2 class="titulo-secao">Como Você Pode Mudar uma Vida</h2>
+    <div class="ajudar-grid">
+      <div class="ajudar-item" onclick="mudarAba('catalogo'); location.href='#catalogo'">
+        <div class="ajudar-icone">
+          <img src="img/adotar.png" width="90px">
+        </div>
+        <h3>Adotar</h3>
+        <p>Adote nossos peludinhos resgatados e dê a eles um lar seguro, cheio de amor e carinho para toda a vida.</p>
+      </div>
+
+      <div class="ajudar-item" onclick="mudarAba('doar'); location.href='#catalogo'">
+        <div class="ajudar-icone">
+            <img src="img/doar.png" width="90px">
+        </div>
+        <h3>Doar</h3>
+        <p>Cadastre um animal que precisa de um novo lar ou contribua com ração, medicamentos e cuidados veterinários.</p>
+      </div>
+  </section>
+
+  <footer id="contato">
+    <div class="footer-principal">
+      <div class="footer-brand">
+        <div class="logo">
+          <div class="logo-icone">
+                <img src="img/adp.png" width="200px">
+          </div>
+        </div>
+        <div class="sociais">
+          <a href="#" aria-label="Facebook">f</a>
+          <a href="#" aria-label="Instagram">📷</a>
+          <a href="#" aria-label="Twitter">X</a>
+          <a href="#" aria-label="YouTube">▶</a>
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <h4>Sociais</h4>
+        <ul>
+          <li><a href="#">adoptails@mail.com</a></li>
+          <li><a href="#">Sobre Nós</a></li>
+          <li><a href="#">Adote um lar</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Links Rápidos</h4>
+        <ul>
+          <li><a href="#catalogo" onclick="mudarAba('catalogo')">Adotar</a></li>
+          <li><a href="#catalogo" onclick="mudarAba('doar')">Doar</a></li>
+          <li><a href="#como-ajudar">Voluntariado</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Contato</h4>
+        <ul>
+          <li><a href="#como-ajudar">Sobre Nós</a></li>
+          <li><a href="mailto:contato@adoptails.com.br">contato@adoptails.com.br</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <span>© 2026 Adoptails - Todos os direitos reservados.</span>
+      <a href="#inicio" class="btn-topo" title="Voltar ao topo">▲</a>
+    </div>
+  </footer>
+
+  <div id="modal-adocao" class="modal-overlay">
+    <div class="modal-box">
+      <button class="modal-fechar" onclick="fecharModal('modal-adocao')">×</button>
+      <h3>Adotar <span id="modal-nome-pet"></span> 🐾</h3>
+      <p>Preencha seus dados para que nossa equipe entre em contato e agende uma visita.</p>
+      <form id="form-adocao">
+        <input type="hidden" id="adocao-animal-id">
+        <div class="form-grupo">
+          <label for="adocao-nome">Seu Nome Completo</label>
+          <input type="text" id="adocao-nome" required placeholder="Ex: Maria Silva">
+        </div>
+        <div class="form-grupo">
+          <label for="adocao-email">Seu E-mail</label>
+          <input type="email" id="adocao-email" required placeholder="Ex: maria@email.com">
+        </div>
+        <button type="submit" class="btn-enviar">Enviar Pedido de Adoção</button>
+      </form>
+    </div>
+  </div>
+
+  <div id="modal-login" class="modal-overlay">
+    <div class="modal-box">
+      <button class="modal-fechar" onclick="fecharModal('modal-login')">×</button>
+      <h3>Entrar no Adoptails</h3>
+      <p>Acesse sua conta de protetor ou adotante.</p>
+      <form onsubmit="event.preventDefault(); alert('Login realizado!'); fecharModal('modal-login');">
+        <div class="form-grupo">
+          <label for="login-email">E-mail</label>
+          <input type="email" id="login-email" required placeholder="seu@email.com">
+        </div>
+        <div class="form-grupo">
+          <label for="login-senha">Senha</label>
+          <input type="password" id="login-senha" required placeholder="••••••••">
+        </div>
+        <button type="submit" class="btn-enviar" style="background: var(--azul-escuro);">Entrar</button>
+      </form>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
